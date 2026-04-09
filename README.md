@@ -1,64 +1,23 @@
-🎵 Chats Mood Changer (Chrome Extension)
-Chats Mood Changer is a Manifest V3 Chrome extension that automatically synchronizes your current YouTube or YouTube Music vibe with your chat profiles. It detects what you're listening to and updates your "mood" status on compatible chat platforms in real-time.
+🚀 Key Features
+Real-Time Sync: Instantly watches for video changes and updates your status.
 
-🚀 Features
-Automatic Detection: Watches YouTube and YouTube Music tabs for track changes.
+No API Key Needed: Uses YouTube's oEmbed system to pull metadata securely without complex setups.
 
-Privacy-Friendly: Uses YouTube's oEmbed system—no API keys or Google login required.
+Low Overhead: A lightweight background script handles the heavy lifting, keeping your browser fast.
 
-Lightweight: Runs in the background with minimal resource impact.
+Privacy-Focused: No tracking, no analytics—just your music and your chat.
 
-Seamless Integration: Formats track titles and channel info into a clean mood string and pushes it to your chat profile.
+🛠️ Installation Guide (Manual/Developer Mode)
+Since this version is currently in source format, follow these steps to get it running in under 60 seconds:
 
-🛠️ How It Works
-Detection: A content script monitors the URL and page state of YouTube tabs.
+Download the Source: * Clone this repository or download the .zip file and extract it to a dedicated folder.
 
-Metadata: The extension fetches the song title and artist via the oEmbed API.
+Open Chrome Extensions: * In your address bar, type chrome://extensions/ and hit Enter.
 
-Synchronization: The background script broadcasts this metadata to any open, compatible chat tabs.
+Enable Developer Mode: * Toggle the switch in the top-right corner to ON.
 
-Update: The chat content script performs a POST request to the site's profile endpoint (/system/action/action_profile.php) to save your new mood.
+Load the Extension: * Click the "Load unpacked" button in the top-left.
 
-📦 Local Installation (Developer Mode)
-If you are installing this from the source code, follow these steps:
+Select the folder where you extracted the files (the folder containing manifest.json).
 
-Download the Code: Clone this repository or download the ZIP file and extract it to a folder on your computer.
-
-Open Extensions Page: In Google Chrome, navigate to chrome://extensions.
-
-Enable Developer Mode: Toggle the switch in the top right corner to "On."
-
-Load Unpacked: Click the "Load unpacked" button in the top left.
-
-Select Folder: Navigate to and select the folder containing the extension files (where manifest.json is located).
-
-🧪 Testing the Flow
-Open a compatible chat page and ensure you are logged in.
-
-Open a YouTube or YouTube Music video in a separate tab.
-
-Change the video or play a new song.
-
-Refresh or check your profile on the chat site; your mood should reflect the current video title.
-
-📝 Technical Notes & Configuration
-File Structure
-manifest.json: Extension configuration (MV3).
-
-background.js: Handles shared state and cross-tab communication.
-
-youtube-content.js: Injected into YouTube to detect video changes.
-
-chat-content.js: Injected into chat sites to handle the actual profile update.
-
-Custom Endpoints
-The extension is pre-configured to communicate with /system/action/action_profile.php. If your target chat site uses a different URL structure for profile updates, you must update the APPLY_ENDPOINTS constant inside chat-content.js.
-
-🛡️ Privacy & Data
-This extension is designed with privacy in mind:
-
-Data Usage: It only reads YouTube metadata (Title/Artist).
-
-No Tracking: No analytics or third-party tracking scripts are included.
-
-Data Destination: Mood data is sent only to the specific chat endpoints you are currently logged into.
+Confirm: * The Chats Mood Changer icon should now appear in your extension list!
