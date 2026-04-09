@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Chats Mood Changer",
+  "version": "1.0.0",
+  "description": "Updates compatible chat-site mood text based on what you are watching or listening to on YouTube.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://music.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*",
+        "https://music.youtube.com/*"
+      ],
+      "js": ["youtube-content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*/*chat*",
+        "*://drawspace.online/*",
+        "*://*.boomcoding.com/*",
+        "*://moonwave.online/*"
+      ],
+      "js": ["chat-content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Chats Mood Changer"
+  }
+}
