@@ -12,7 +12,7 @@ Since this version is currently in source format, follow these steps to get it r
 
 Download the Source: * Clone this repository or download the .zip file and extract it to a dedicated folder.
 
-Open Chrome Extensions: * In your address bar, type chrome://extensions/ and hit Enter.
+Open Chrome Extensions: * In your address bar, type chrome://extensions/ and hit Enter. 
 
 Enable Developer Mode: * Toggle the switch in the top-right corner to ON.
 
